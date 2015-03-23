@@ -1,0 +1,67 @@
+<head>
+  <title>Babel Demo</title>
+</head>
+
+<body>
+  {{> tryit}}
+  {{> cases}}
+</body>
+
+<template name="tryit">
+  <div id="tryit">
+    <div id="tryit-leftright">
+      <div id="tryit-left">
+        <div id="tryit-input-wrapper">
+          <textarea id="tryit-input">
+{{input}}</textarea>
+        </div>
+      </div>
+      <div id="tryit-right">
+        <div id="tryit-output">
+          {{#if output.error}}
+          <div id="tryit-output-error">
+            <pre>{{output.error.reason}}</pre>
+          </div>
+          {{else}}
+          <pre>{{output.code}}</pre>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div id="tryit-features">
+      {{#each features}}
+        {{> feature featureName=.}}
+      {{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="feature">
+  <div class="feature {{#if isSelected}}feature-selected{{/if}}"><span>{{#if isSelected}}&#9745;{{else}}&#9744;{{/if}}</span> {{featureName}}</div>
+</template>
+
+<template name="cases">
+  <div id="cases">
+    {{#markdown}}The following examples are read from the `babel-tests` package.{{/markdown}}
+    {{#each testGroups}}
+    <h2>{{groupName}} {{#each features}}<span>{{.}}</span>{{/each}}</h2>
+    {{#each cases}}
+      {{#if commentary}}
+        {{#markdown}}{{commentary}}{{/markdown}}
+    {{/if}}
+      <div class="case-wrapper-outer">
+      <div class="case-wrapper-table">
+      <div class="case-wrapper-tr">
+      <div class="input">
+        <pre>{{input}}</pre>
+      </div>
+      <div class="output">
+        <pre>{{expected}}</pre>
+      </div>
+      </div>
+      </div>
+      </div>
+      {{/each}}
+    {{/each}}
+  </div>
+</template>
