@@ -45,10 +45,13 @@
     {{#markdown}}The following examples are read from the `babel-tests` package.{{/markdown}}
     {{#each testGroups}}
     <h2>{{groupName}} {{#each features}}<span>{{.}}</span>{{/each}}</h2>
+    {{#if commentary}}
+      {{#markdown}}{{commentary}}{{/markdown}}
+    {{/if}}
     {{#each cases}}
       {{#if commentary}}
         {{#markdown}}{{commentary}}{{/markdown}}
-    {{/if}}
+      {{/if}}
       <div class="case-wrapper-outer">
       <div class="case-wrapper-table">
       <div class="case-wrapper-tr">
