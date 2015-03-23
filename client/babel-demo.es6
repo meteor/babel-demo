@@ -7,7 +7,7 @@ TryIt.FEATURES = [
   "es6.blockScopingTDZ"
 ];
 
-TryIt.setDefault('input', 'let x = 3;');
+TryIt.setDefault('input', 'print(`Yo, ${name}!`);');
 TryIt.setDefault('output', {});
 TryIt.setDefault('features', ['es6.templateLiterals']);
 TryIt.revisionCounter = 0;
