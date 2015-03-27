@@ -6,12 +6,13 @@ TryIt.FEATURES = [
   "es6.arrowFunctions",
   "es6.blockScoping",
   "es6.blockScopingTDZ",
+  "flow",
   "es6.forOf"
 ];
 
 TryIt.setDefault('input', 'print(`Yo, ${name}!`);');
 TryIt.setDefault('output', {});
-TryIt.setDefault('features', ['es6.classes', 'es6.templateLiterals']);
+TryIt.setDefault('features', ['flow', 'es6.classes', 'es6.templateLiterals']);
 TryIt.revisionCounter = 0;
 
 Template.tryit.helpers({
