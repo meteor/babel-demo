@@ -5,9 +5,11 @@ TryIt.FEATURES = [
   "es6.templateLiterals",
   "es6.arrowFunctions",
   "es6.blockScoping",
-  "es6.blockScopingTDZ",
+  "es6.properties.shorthand",
+  "es6.properties.computed",
   "flow",
-  "es6.forOf"
+  "es6.blockScopingTDZ",
+  "es6.forOf",
 ];
 
 TryIt.setDefault('input', 'print(`Yo, ${name}!`);');

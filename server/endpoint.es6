@@ -11,7 +11,8 @@ Meteor.methods({
       }
       var result = Babel.transform(inputCode, {
         whitelist: whitelist,
-        externalHelpers: true
+        externalHelpers: true,
+        loose: "all"
       });
 
       return {
