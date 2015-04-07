@@ -9,10 +9,8 @@ Meteor.methods({
           code: inputCode
         };
       }
-      var result = Babel.transform(inputCode, {
-        whitelist: whitelist,
-        externalHelpers: true,
-        loose: "all"
+      var result = Babel.transformMeteor(inputCode, {
+        whitelist: whitelist
       });
 
       return {
